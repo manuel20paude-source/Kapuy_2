@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAPUY - Créditos e Inversiones</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <div class="logo-kapuy">
+        <img src="./Assets/KAPUY_3_1.png" alt="Logo Kapuy" width="100">
+      </div>
+      <h1 class="nombre-empresa">KAPUY</h1>
+      <nav id="navMenu">
+        <a href="#">Inicio</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Servicios</a>
+        <a href="#" onclick="mostrarMain()">Mi Kapuy</a>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Financia tu idea, haz crecer tu futuro</h2>
+        <p>Con KAPUY conecta inversionistas con emprendedores de forma simple, rápida y segura.</p>
+        <button onclick="mostrarMain()">Comenzar ahora</button>
+      </div>
+    </section>
+
+    <!-- SECCIÓN BENEFICIOS -->
+    <section class="beneficios">
+      <h2>¿Por qué elegir KAPUY?</h2>
+      <div class="cards-beneficios">
+        <div class="card">
+          <img src="https://img.icons8.com/color/96/money-bag.png" alt="Créditos rápidos">
+          <h3>Créditos en minutos</h3>
+          <p>Solicita tu préstamo online y recibe respuesta inmediata.</p>
+        </div>
+        <div class="card">
+          <img src="https://img.icons8.com/color/96/collaboration.png" alt="Conexión directa">
+          <h3>Conexión directa</h3>
+          <p>Sin bancos ni intermediarios, inversionistas y clientes conectados.</p>
+        </div>
+        <div class="card">
+          <img src="https://img.icons8.com/color/96/security-checked.png" alt="Seguridad">
+          <h3>Seguro y confiable</h3>
+          <p>Transacciones claras y protección de tus datos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT (oculto al inicio) -->
+    <main id="mainContent" style="display: none;">
+      <h2>Bienvenido a <span style="color:#251997;">KAPUY</span></h2>
+      
+      <!-- Aquí va todo tu contenido actual: login, registro, panel de usuario -->
+      <div id="loginForm" class="form-container">
+        <h2>Iniciar Sesión</h2>
+        <form onsubmit="iniciarSesion(event)">
+          <input type="text" id="loginUsuario" placeholder="Usuario" required>
+          <input type="password" id="loginPassword" placeholder="Contraseña" required>
+          <button type="submit">Ingresar</button>
+        </form>
+        <p>¿No tienes cuenta? <a href="#" onclick="mostrarRegistro()">Crear una aquí</a></p>
+      </div>
+
+      <!-- resto de tu contenido -->
+    </main>
+
+  </div>
+
+  <script>
+    function mostrarMain() {
+      // Ocultar hero y beneficios
+      document.querySelector('.hero').style.display = 'none';
+      document.querySelector('.beneficios').style.display = 'none';
+      
+      // Mostrar contenido principal
+      document.getElementById('mainContent').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
